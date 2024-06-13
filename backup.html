@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Backup Script</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon Icon is taken from https://www.flaticon.com/ -->
+        <link rel="icon" href="assets/penguin.png">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <!-- This logo will appear on every page of our website -->
+            <!-- When you click the top banner, it will link back to the homepage -->
+            <a href = "index.html">
+                <div class="logo">
+                    <img src= "assets/PurplePenguinsLogo.png" alt="Purple Penguins Logo">
+                </div>
+            </a>
+        </header>
+
+        <!-- 
+            NAVBAR START
+            Inspired by: https://lowylori.github.io/a3web/index.html
+        -->
+        <div class="navbar" id="myNav">
+            <!-- Creating a div to store the hamburger menu icon with a function that run when the user clicks the icon -->
+            <div class="hamburger" onclick="responsiveNav(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Solution</button>
+                <!-- Solutions dropdown menu content -->
+                <div class="dropdown-content">
+                    <a href="evacmaps.html">Evacuation Maps</a> 
+                    <a href="envsolution.html">Environmental Management Solution</a>
+                    <a href="sheqsystem.html">SHEQ Management System</a> 
+                    <a href="opsmaps.html">Operational Maps</a> 
+                    <a href="basemaps.html">Basemaps</a>
+                    <a href="backup.html" class="active">Backup Script</a>   <!-- Indicates currently active page -->
+                    <a href="mapviewer.html">Campus Map Viewer</a>
+                    <a href="training.html">Training</a> 
+                </div> 
+            </div>
+            <a href="team.html">Meet the Team</a>
+        </div>
+
+        <!--NAVBAR END-->
+
+        <h1> ArcGIS Online Methodology</h1>
+        <div class= "pictrow"> 
+            <div class= "pictcolumn">
+                <div class= "picttext">
+                    <img src="assets/AGOLSolutionsedit.png" alt="AGOL Solutions Flowchart" class="img-small">
+                </div>
+            </div>  
+        </div>
+    
+        <!--Accordion Button Start-->	
+        <div id = "containerAGOL">
+            <button type = "button" class="ExpandingButton">Step 1: Deploy ArcGIS Solution</button>
+            <div class="Article">
+                <p>Log into ArcGIS Solutions, through the ArcGIS Online portal. Search for the relevant solution you are looking for; in this case it was “Parks and Grounds Management”. 
+                    Click the “Deploy now” button to deploy this solution so your account.</p>
+            </div>
+            
+        
+            <button type = "button" class="ExpandingButton">Step 2: Edit Surveys</button>
+            <div class="Article">
+                <p>Once deployed on your account, you are able to start editing the components you would like to use. Firstly, open both surveys in Survey123 Connect to be able to
+                    edit them. While doing this, make sure to update the titles and names on the surveys to match the current project.
+                    Once any edits are made to the survey to meet the requirements you are looking to meet, republish the survey. This can be done by clicking the 
+                    publish button, on the edit panel.  
+                </p>
+            </div>
+        
+        
+            <button type = "button" class="ExpandingButton">Step 3: Edit Workforce</button>
+            <div class="Article">
+                <p> Next, edit the Workforce project to add any relevant staff to the project and assign them roles. To add workers, go to your relevant workforce project and click the 
+                    gear wheel called “configure”. Once in this window, you can add more mobile workers or dispatchers through “users” 
+                    page on the top bar. Select the staff you would like added and a project role.  </p>
+            </div>
+        
+            <button type = "button" class="ExpandingButton">Step 4: Data Collection</button>
+            <div class="Article">
+                <p> Next, open the surveys you created and add requests into them. This will be important for assigning requests to people. 
+                    You can add requests through both the external and internal surveys to ensure they work.   </p>
+            </div>
+            <button type = "button" class="ExpandingButton">Step 5: Assign Tasks</button>
+            <div class="Article">
+                <p> If you logged out of Workforce, log back into Workforce and practice assigning an open task to a staff member. 
+                    This is to test out that the task assigns properly and that this change is 
+                    reflected in the dashboards explored in step 6. To do this, Open the Workforce project by clicking it. 
+                    You can either select a request on the map by clicking on it and click “create assignment” to bring up a window to add assignment type and relevant details such as 
+                    priority, worker assigned to as well as add any more details to the request. To push it through, click “create assignment”. 
+                    New assignments can also be created by managers by clicking the “+ Assignments” button on the top bar. The same as above, fill in the details and assign it to a worker. 
+                    Now workers will be able to see tasks assigned to them.</p>
+
+            </div>
+            <button type = "button" class="ExpandingButton">Step 6: Edit Dashboards</button>
+            <div class="Article">
+                <p> Next, edit the dashboards and requests centers to match clients name and needs. By selecting and editing each dashboard separately from your contents page, 
+                    update the titles and names of the dashboards to match the project. You can do this by clicking “edit dashboard” and once in the dashboard, you can edit every part of the 
+                    dashboard by clicking the “…” over every component and opening the 
+                    settings, called “configure”. 
+                    On the dashboard, ensure the data being presented makes sense in relation to the project goals 
+                    and select new questions to be presented in the graph area if needed.  
+                </p>
+            </div>
+            <button type = "button" class="ExpandingButton">Step 7: Generate Reports using ArcGIS Online Jupyter Notebook</button>
+            <div class="Article">
+                <p> Utilize ArcGIS API for Python within ArcGIS Online Jupyter Notebook environment to do the following:</p>
+                <ul>
+                    <li>Create a New Jupyter Notebook</li>
+                    <li>Access and Load Survey123 Data</li>
+                    <li>Create Reporting Templates</li>
+                    <li>Create Tasks</li>
+                    <li>Automate Reporting</li>
+                    <li>Set up task scheduling</li>
+                </ul>
+                <p>Connecting Jupyter Notebooks to ArcGIS Online Survey123 makes it easy to select data for reports. By automating the notebook with tasks,
+                reports can be generated regularly, whether daily, weekly, or monthly. This setup simplifies the process and ensures timely updates for customized reports.
+                Although we're currently unable to automate report delivery to the client, we plan to gather feedback and work towards implementing their preferred method whenever we are on-site.</p>
+            </div>
+        </div>
+        <!--Accordion Button end-->	
+
+
+
+
+        <!-- JS script for hamburger menu animation and responsive navbar -->
+        <script src="js/script.js"></script>
+        <!--NAVBAR END-->
+
+        <footer>
+            <div class="footertext">
+                <p>Copyright of Purple Penguins, 2024.</p>
+            </div>
+            <!-- Clicking on the cicle brings you to the home page -->
+            <div class="centericon">
+                <a href="index.html" class="fab fa-circle" title="Purple Penguins Logo Color"></a>
+            </div>
+        </footer>
+    </body>
+
+</html>
