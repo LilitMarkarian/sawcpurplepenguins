@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Integrated Solution</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon Icon is taken from https://www.flaticon.com/ -->
+        <link rel="icon" href="assets/penguin.png">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <!-- This logo will appear on every page of our website -->
+            <!-- When you click the top banner, it will link back to the homepage -->
+            <a href = "index.html">
+                <div class="logo">
+                    <img src= "assets/PurplePenguinsLogo.png" alt="Purple Penguins Logo">
+                </div>
+            </a>
+        </header>
+
+        <!--
+            NAVBAR START
+            Inspired by: https://lowylori.github.io/a3web/index.html
+        -->
+        <div class="navbar" id="myNav">
+            <!-- Creating a div to store the hamburger menu icon with a function that run when the user clicks the icon -->
+            <div class="hamburger" onclick="responsiveNav(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <a href="index.html">Problem Statement</a>
+            <div class="dropdown">
+                <button class="dropbtn">Methodology</button>
+                <!-- Methodology dropdown menu content -->
+                <div class="dropdown-content">
+                    <a href="agolmethod.html">AGOL Method</a>
+                    <a href="integratedmethod.html">Integrated Method</a>
+                </div> 
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Solution</button>
+                <!-- Solutions dropdown menu content -->
+                <div class="dropdown-content">
+                    <a href="agolsolution.html">AGOL Solution</a>
+                    <a href="integratedsolution.html" class="active">Integrated Solution</a> <!-- Indicates currently active page -->
+                </div> 
+            </div>        
+            <a href="thingswetried.html">Things We Tried</a>
+            <a href="team.html">Meet the Team</a>
+        </div>
+
+        <!-- JS script for hamburger menu animation and responsive navbar -->
+        <script src="js/script.js"></script>
+        <!--NAVBAR END-->
+        <div class= "wrapped-content1"> 
+            <div class="wrapped-text-box">
+                <h1> Integrated Solution</h1>
+                <p>For this solution, we integrated Survey123, Power Automate and Excel Onedrive to create a dynamic solution that
+                    enables us to accomplish a similar solution to AGOL that adapts to the existing technological knowledge of the client.
+                    Once a survey is submitted, the Excel Workflow is initiated, populating the excel document with the survey request. From there, 
+                    a manager can make modifications to the document, when they assign the task to a staff member. Excel sheets can be printed and 
+                    distributed to staff members as necessary. The manager can update tasks when they are 
+                    completed and set the completion date. Next, the excel spreadsheet connects to our scheduled report generating workflow, which uses the tasks 
+                    and their status to generate reports which are emailed and can be adapted to send out daily, weekly or monthly. </p>
+            </div>
+        </div>    
+
+        <div class= "wrapped-content"> 
+            <div class="wrapped-text-box">
+                <h2>Survey123</h2>
+                <p>The request form created in Survey123 was specially adapted to be used with the automated workflow. <a href="https://survey123.arcgis.com/share/9dcdb3c684fd455491cafe68eaa8d646?portalUrl=https://Fleming.maps.arcgis.com" target="_blank">A copy of 
+                        the public survey can be found here</a></p>
+                <img class="solutionimage" src="assets/surveyFormpt1.png" alt="First half of the survey form">
+                <img class="solutionimage" src="assets/surveyFormpt2.png" alt="Second half of the survey form">
+                <p>After surveys are submitted, they can be managed in the Survey123 Manager in AGOL</p>
+                <img class="solutionimage" src="assets/surveyManageredit.jpg" alt="Survey manager page data tab in AGOL">
+            </div>
+        </div>
+    
+        <div class= "wrapped-content"> 
+            <div class="wrapped-text-box">
+                <h2>Assigning tasks</h2>
+                <p>We used Power Automate to automate the process of taking a survey request and placing it into the Excel Onedrive workbook. As mentioned in the methodology, the workbook 
+                    had to be already set up in order to use this flow. See an image of the flow below.
+                </p>
+                <img class="solutionimage" src="assets/excelworkflow.png" alt="Power Automate workflow for adding survey responses to excel workbook">
+                <!-- Nested ordered lists using br to put on a new line bc only child element of ol is li, and we wanted the description on a new line -->
+                <ol>
+                    <li>Trigger: <br>The trigger for this workflow is when a survey response is submitted</li>
+                    <li>Convert time zone: <br>The timezone from the survey is converted from Epoch to UTC central time using a custom function.</li>
+                    <li>Control Condition - High Priority: <br>This is an if conditional that uses the survey field for priority, and evaluates to true when priority is set to high.</li>
+                    <li>High Priority = True: <br>The following occurs when the condition evaluates to True.
+                        <ol>
+                            <li>For Each: <br>This loop iterates through the survey to grab the metadata for the attachment. This is the image attachment url.</li>
+                            <li>For Each: <br>This loop iterates through the survey to grab the metadata for the response ID.</li>
+                            <li>Add Row into a table <br>Adds row to high priority table, using the feature attributes from the survey to populate the cells in excel.</li>
+                        </ol>
+                    </li>
+                    <li>High Priority = False <br>The following occurs when the condition evaluates to False.
+                        <ol>
+                            <li>Control Condition: Medium Priority <br>This is an if conditional that uses the survey field for priority, and evaluates to true when priority is set to medium.</li>
+                            <li>Medium Priority = True: <br>The following occurs when the condition evaluates to True.
+                                <ol>
+                                    <li>For Each: <br>This loop iterates through the survey to grab the metadata for the attachment. This is the image attachment url.</li>
+                                    <li>For Each: <br>This loop iterates through the survey to grab the metadata for the response ID.</li>
+                                    <li>Add Row into a table <br>Adds row to medium priority table, using the feature attributes from the survey to populate the cells in excel.</li>
+                                </ol>
+                            </li>
+                        <li>Medium Priority = False: <br>The following occurs when the condition evaluates to False.
+                            <ol>
+                                <li>For Each: <br>This loop iterates through the survey to grab the metadata for the attachment. This is the image attachment url.</li>
+                                <li>For Each <br>This loop iterates through the survey to grab the metadata for the response ID.</li>
+                                <li>Add Row into a table: <br>Adds row to low priority table, using the feature attributes from the survey to populate the cells in excel.</li>
+                            </ol>
+                        </li>
+                        </ol>
+                    </li>
+                </ol>
+                <p>The final excel sheet with survey responded populated looks like this:</p>
+                <img class="solutionimage" src="assets/excelFinaledit.png" alt="Excel high priority populated table">
+
+            </div>
+        </div>
+
+        <!-- Work in Progress -->
+        <div class= "wrapped-content"> 
+            <div class="wrapped-text-box">
+                <h2> Reporting System </h2>
+                <p> The integrated reporting system uses Microsoft Power Automate to create a system of tools that would create an HTML document of the report, upload this to
+                OneDrive, create a PDF out of that report, upload the PDF to OneDrive, and finally email a link with the PDF to anyone on the email list. This would run on a 
+                timed basis, depending on when SAWC wants the reports created and sent out. 
+                In practice, there would be three flows, one for each of the levels of priority, all that go out at different times. Below is a screenshot of the overall flow. 
+                </p>
+                <img class="solutionimage" src="assets/ReportingFlow1.png" alt="Integrated Reporting 1">    
+                <img class="solutionimage" src="assets/ReportingFlow2.png" alt="Integrated Reporting 2">          
+                <dl>
+                    <dt>1. Recurrance</dt>
+                    <dd>The recurrence happens whenever the report should be sent out. This flow is sent out once a month.</dd>
+                    <dt>2. List Rows Present in Table</dt>
+                    <dd>The excel sheet previously created is access, and is later called in dynamic content.</dd>
+                    <dt>3. Initialize Variable</dt>
+                    <dd>This creates a counter starting at 0. This is later used to count through how many incidents have occured in the month.</dd>
+                    <dt>4. Initialize Variable 2</dt>
+                    <dd>Creates the date variable, sets it to the current date with the format mm/dd/yyyy, or just mm if its daily</dd>
+                    <dt>5. For Each</dt>
+                    <dd>For each is the equivalent of a for loop. The loop iterates through the excel table.</dd>
+                    <dt>6. Condition</dt>
+                    <dd>If the days/months in the rows are equivalent to the current date, the counter is incremented by 1.</dd>
+                    <dt>7. HTML to Text</dt>
+                    <dd>This action is where HTML is applied to create a report. Right now, there is only the title of the report and how many reports have occured. Input from SAWC would be needed to understand
+                    what else is required in the report.</dd>
+                    <dt>8. Create File</dt>
+                    <dd>The HTML file is uploaded to OneDrive. The date is used in the name so that the file does not overwrite another file.</dd>
+                    <dt>9. Convert File Using Path</dt>
+                    <dd>The HTML file is converted to a PDF, also with the date in the name.</dd>
+                    <dt>10. Create File 1</dt>
+                    <dd>The newly created PDF is uploaded to OneDrive.</dd>
+                    <dt>11. Sent an Email</dt>
+                    <dd>An email is sent with a link to the PDF.</dd>
+                </dl>
+                <h2>Overall Thoughts</h2>   
+                <p>Microsoft Power Automate is useful for integrating different software into one solution. Team Purple Penguins wanted to come up with a solution that used more well known software like Excel so that 
+                potentially more people could understand the workflow. The dynamic text is useful for Flows that will occur on a timed basis, and Flow also had a lot of online help. However, there were some flaws
+                to this software. An issue that was common is that certain functions that would be easy to do in a programming language such as Python were slightly more complicated in Power Automate. Adding conditionals
+                and iterations took time to fully comprehend. There was also a licensing issue with Power Automate. The ideal way to create a report would be to populate a Word document. However, this was only available to 
+                premium Microsoft users. A solution was found with HTML, but HTML is not a commonly known progamming language for the average person. If the report were to be change, someone with knowledge of HTML would need 
+                to change it. Another issue that was found was the emailing of the actual report. Trying to attach a PDF to the email did not work. After some 
+                <a href="https://techcommunity.microsoft.com/t5/power-apps-and-power-automate-in/sending-a-pdf-file-as-an-email-attachment-with-power-automate/m-p/3972229" target="_blank">online research</a>, it was discovered that 
+                this was a common bug
+                with the version 2 of the Send An Email action. The old version was unavailable. Overall, Microsoft Power Automate had many advantages with its pleasing visual display and ability to integrate ESRI software with 
+                Microsoft software. There are many challenges to consider before implementing a FLow as a reporting system. 
+                </p>
+            </div>
+            
+            
+        </div>
+    <!-- <div class = "isolution-container">
+        <div class= "columnflow">
+            <h2> Flow </h2>
+        </div>
+    </div> -->
+
+        <footer>
+            <div class="footertext">
+                <p>Copyright of Purple Penguins, 2024.</p>
+            </div>
+           <!-- Clicking on the cicle brings you to the home page -->
+            <div class="centericon">
+                <a href="index.html" class="fab fa-circle" title="Purple Penguins Logo Color"></a>
+            </div>
+        </footer>
+
+    </body>
+</html>

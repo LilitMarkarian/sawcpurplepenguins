@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Things We Tried</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon Icon is taken from https://www.flaticon.com/ -->
+        <link rel="icon" href="assets/penguin.png">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <!-- This logo will appear on every page of our website -->
+            <!-- When you click the top banner, it will link back to the homepage -->
+            <a href = "index.html">
+                <div class="logo">
+                    <img src= "assets/PurplePenguinsLogo.png" alt="Purple Penguins Logo">
+                </div>
+            </a>
+        </header>
+
+
+    <!--
+            NAVBAR START
+            Inspired by: https://lowylori.github.io/a3web/index.html
+        -->
+        <div class="navbar" id="myNav">
+            <!-- Creating a div to store the hamburger menu icon with a function that run when the user clicks the icon -->
+            <div class="hamburger" onclick="responsiveNav(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <a href="index.html">Problem Statement</a>  
+            <div class="dropdown">
+                <button class="dropbtn">Methodology</button>
+                <!-- Methodology dropdown menu content -->
+                <div class="dropdown-content">
+                    <a href="agolmethod.html">AGOL Method</a> 
+                    <a href="integratedmethod.html">Integrated Method</a>
+                </div> 
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Solution</button>
+                <!-- Solutions dropdown menu content -->
+                <div class="dropdown-content">
+                    <a href="agolsolution.html">AGOL Solution</a>
+                    <a href="integratedsolution.html">Integrated Solution</a>
+                </div> 
+            </div>
+            <a href="thingswetried.html" class="active">Things We Tried</a> <!-- Indicates currently active page -->
+            <a href="team.html">Meet the Team</a>
+        </div>
+
+
+        <!--NAVBAR END-->
+        
+        <h1> Things We Tried </h1>
+    <!--Accordion Button Start-->	
+        <div id = "containerOther">
+            <button type="button" class="ExpandingButton">Building a solution from scratch</button>
+            <div class="Article">
+                <p>For the first part of the web time, our group investigated different pieces of building a solution from scratch. The idea was to build separate components of the solution and 
+                    combine them together. The reason we didn’t end up doing this on ArcGIS Online was because we found the ArcGIS Solutions to be much better designed in terms of compatibility and layout/design. 
+                    This was a good learning experience though to see how to design all these pieces separately, if we needed to redesign parts of a pre-made solution.
+                    Pieces of our build own solution look like: </p>
+                <ul>
+                    <li><a href=" https://arcg.is/1vfvbO0" target="_blank"> A survey to collect data on incidents. </a></li>
+                    <li><a href=" https://fieldmaps.arcgis.app/?itemID=0064db3d196b476ba7e4f304c2fcda42&referenceContext=open&portalURL=https%3A%2F%2FFleming.maps.arcgis.com" target="_blank"> A field map for in field collection. </a></li>
+                    <li> <a href="https://fleming.maps.arcgis.com/apps/dashboards/e833df4ac4024d0eac2120ed9421232f" target="_blank"> A dashboard to tie together the work. </a></li>
+                </ul>
+            
+            </div>
+
+            <button type="button" class="ExpandingButton">Citizen Problem Reporter Solution</button>
+            <div class="Article">
+                <p>Before using the Parks and Grounds Management solution, the citizen problem reporter solution was looked into. 
+                    This solution has the pro of a nice dashboard and was fairly easy to use, however, the parks and grounds solution was designed overall better 
+                    for what we are looking to solve. The citizen dashboard seemed to be designed for a city or municipality, but the parks and grounds one is more targeted, 
+                    which was a bonus of it. Also, the parks and grounds surveys were already designed nicely for what we were looking to solve and how we could use the 
+                    pre-existing categories in our solution. A con of the citizen solution was also that it wasn’t as user friendly from a manager side. 
+                    The public side was easier to use but I found some confusion in how to find the right layer to assign tasks to staff. 
+                    Our solution we hoped to design was meant to be straightforward and user friendly and this con did play a role in why it was not chosen for this. 
+                    Overall, this solution is nice but not for the problem we were aiming to address.  
+                    <a href=" https://fleming.maps.arcgis.com/apps/dashboards/6b2d3f50dbc043f9ae9cd4bd83b768f5" target="_blank"> The dashboard can be found here. </a>
+                </p>
+            </div>
+
+            <button type="button" class="ExpandingButton">ArcGIS Field Maps Flow</button>
+            <div class="Article">
+                <p>At the start of our client discussions, I leaned towards using Field Maps for our needs. 
+                    However, as we explored better options, we decided to shift away from Field Maps for report generation. Because we were interested in this flow,
+                    we tried using Microsoft Power Automate to notify managers of critical requests. But, we faced some errors during testing, so we decided not to proceed with it.
+                    Nonetheless, it was a valuable learning experience that helped us understand our options better.
+                </p>
+                <p> The error shown below occurred when running the flow. </p>
+                <img class="thingswetried_images" src="assets/FlowCheckerFieldMaps.png" alt="Flow Checker Error">
+            </div>
+
+            <button type="button" class="ExpandingButton">KoboToolbox</button>
+            <div class="Article">
+                <p>The team explored koboToolbox as an alternative to Survey123. During client discussions, we realized they were open to open source solutions. there 
+                    is a community version that allows you to submit up to 5,000 surveys that's free. We created an account and set up a survey. The interface was easy 
+                    to use and very quick to set up.
+                </p>
+                <img class="thingswetried_images" src="assets/koboSurveySetup.png" alt="Kobo Survey Design Page">
+                <p>The survey worked great and there was even a built in report generator that was easy to use. <a href="https://ee.kobotoolbox.org/x/IP7i0x9E" target="_blank">Click here to view the public survey.</a> 
+                    Additionally, you have the ability to use REST services to automatically post submissions to a third party application. There was really nothing wrong 
+                    with this solution, it was a great platform, but due to our experience and familiarity with Survey 123, we went with that instead. We also liked the look 
+                    of Survey123 forms better.
+            </div>
+
+            <button type="button" class="ExpandingButton">Task Management Automated Flow</button>
+            <div class="Article">
+                <p>After our client let us know that workforce may not be the best solution, we started to explore other ways that tasks can be assigned based on survey request. 
+                    Our client uses Office 365, and there were web applications used from this suite: Power Automate and Tasks by Planner and To Do. The idea was to create a workflow
+                    that triggers when a survey response is submitted. The results are then created as a task in Tasks by Planner and To Do (in teams). First, we set up a sample group 
+                    in teams and created a list within the sample group. Then in Power Automate, we set up a flow that connects to our survey123, and is filtered by priority level. 
+                    Then a task is created using the feature attributes of the survey. The task could then be found within the teams planner app or from a web browser in the planner app.
+                </p>
+                <img class="thingswetried_images" src="assets/taskManagementFlow.png" alt="Power Automate workflow for task management">
+                <img class="thingswetried_images" src="assets/plannerTasksedit.png" alt="Display tasks created from surveys in planner">
+                <p>What was difficult about this flow was that even though there are so many fields to customize a task when it's created manually, within the automation actions 
+                    in Power Automate, all we could change was the title of the task, the list it goes into, and label colour within the 'create a task' action. In the 'update task details' 
+                    we are able to add a description and checklist options. What we can't do is attach a photo, set a location, change the priority level and set the due date. This makes the 
+                    automated workflow redundant because a lot of manual work will still have to be done to set it up a task correctly.
+                </p>
+            </div>
+
+            <button type="button" class="ExpandingButton">Task Assignment with Make</button>
+            <div class="Article">
+                <p>We tried out Make to automate the excel workflow, similar to what we did with Power Automate in the integrated solution. We wanted to see if one software was more user 
+                    friendly over the other, and to see if all the flow options were similar. We started by setting up a webhook connection to Survey123 and Excel OneDrive, similar to Power 
+                    Automate. Next we set the trigger to be when a survey response is submitted and that was fine. We wanted to use a conditional if statement to control the flow of the next 
+                    part. This is where we struggled, because although this web app is very easy to use, sometimes when a program is simplified, it makes it difficult to find the things you are 
+                    looking for. Turned out the tool I was looking for was a router, and you can apply a conditional filter to it by clicking the settings to each connecting action. I was able 
+                    to get the flow working very easily after that.
+                </p>
+                <img class="thingswetried_images" src="assets/makeWorkflow.png" alt="Workflow in Make for adding survey requests into excel">
+                <img class = "thingswetried_images" src="assets/MakeReporting.png" alt="Reporting Make Workflow">
+                <p>We did like make for its user friendliness and simplicity, however, it did make things harder when you are coming from a technical background. Additionally, there was some 
+                    errors that were encountered when setting the Excel 'add worksheet row' and 'retrieve data' action, where the table wasn't connecting. Going into the documentation for Excel, we found that it 
+                    was severely lacking. Only holding info on how to create a table. We thought this was strange considering that there are so many other Excel actions not included in the 
+                    documentation. We had to troubleshoot on our own, which might be an issue for our client. Power Automates documentation on the other hand is well made and easy to follow in 
+                    most cases.
+                </p>
+            </div>
+
+
+        </div>
+    <!--Accordion Button end-->	
+
+    <!-- JS script for hamburger menu animation, expanding buttons and responsive navbar -->
+        <script src="js/script.js"></script>
+        <footer>
+            <div class="footertext">
+                <p>Copyright of Purple Penguins, 2024.</p>
+            </div>
+            <!-- Clicking on the cicle brings you to the home page -->
+            <div class="centericon">
+                <a href="index.html" class="fab fa-circle" title="Purple Penguins Logo Color"></a>
+            </div>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,561 @@
+/* STYLE.CSS */
+body {
+	/* customization of Body */
+	margin: 0;
+	font-family: helvetica, arial, sans-serif;
+	background-color: #d3cad4d2;
+}
+
+/* Customization of Header 1 */
+h1 {
+	color: #544652;
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	font-family: helvetica, arial, sans-serif;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 5px;
+	padding-top: 20px;
+}
+
+/* Customization of Header 2 */
+h2 {
+	color: #5b4b58;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	font-family: helvetica, arial, sans-serif;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Customization of Header 3 */
+h3 {
+	color: #7b5672;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: helvetica, arial, sans-serif;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Customization of Header 4 */
+h4 {
+	color: #000;
+	text-align: center;
+	font-weight: bold;
+	font-size: 17px;
+	font-family: helvetica, arial, sans-serif;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Customization of paragraph text */
+p, li {
+	color:#000;
+	font-weight: normal;
+	font-size: 16px;
+	font-family: helvetica, arial, sans-serif;
+	padding: 10px;
+}
+
+dd, dt {
+	color:#000;
+	font-weight: normal;
+	font-size: 16px;
+	font-family: helvetica, arial, sans-serif;
+	padding: 10px
+}
+
+dl {padding-left: 40px}
+
+/* Header customization */
+header {
+	background-color: white;
+	padding: 5px;
+	justify-content: space-between;
+}
+
+/* Customization of the logo of the website */
+.logo {
+	width: 150px;
+	height: 150px;
+	margin: 0;
+}
+
+
+/* Customization of the navigation bar Start*/
+.navbar {
+	overflow: hidden;
+	background-color: #4f445f;
+	transition: .3s ease-in-out;
+}
+
+/* Customization of the links in the navigation bar */
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Selects active class for current page */
+.active {
+	background-color: #8d7fa1;
+	color: white;
+}
+
+/* Customization of the navigation bar dropdown */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+/* Customization of the dropdown button */
+.dropdown .dropbtn {
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+/* Customization of the navigation bar links when mouse hovers over them */
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: #a296b3;
+	transition: 0.3s;
+}
+
+/* Customization of the navigation bar dropdown content */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+/* Customization of the links in the navigation bar dropdown */
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	/* Fade in animation for the drop down menu for several different browsers */
+	animation-duration: 0.5s;
+    animation-name: fadeInFromNone;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: fadeInFromNone;
+    -webkit-animation-fill-mode: forwards;
+    -ms-animation-duration: 0.5s;
+    -ms-animation-name: fadeInFromNoneIE;
+    -ms-animation-fill-mode: forwards;
+}
+
+/* Key frames animation webkit for older versions of chrome and safari */
+@-webkit-keyframes fadeInFromNone {
+    0% {opacity: 0}
+    1% {opacity: 0}
+    100% {opacity: 1}
+}
+
+/* Key frames animation for internet explorer */
+@keyframes fadeInFromNoneIE {
+    0% {opacity: 0}
+    1% {opacity: 0}
+	100% {opacity: 1}
+}
+
+/* Key frames animation for modern browsers that follow standard CSS specifications */
+@keyframes fadeInFromNone {
+    0% {opacity: 0}
+    1% {opacity: 0}
+    100% {opacity: 1}
+}
+
+/* Customization of the navigation bar dropdown text when mouse hovers over them */
+.dropdown-content a:hover {
+	background-color: #e0e0e0;
+}
+
+/* Shows the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+	opacity: 1;
+	visibility: visible; 
+}
+
+/* Responsive Design for the navigation bar, heighter max with threshold to prevent stacking */
+@media screen and (max-width: 925px) {
+	/* Selects navbar links and the drop btn class in dropdown class */
+	.navbar a, .dropdown .dropbtn {display: none;}
+	
+	/* Selects all elements in the navbar and responsive class */
+	.navbar.responsive {position: relative;}
+	
+	/* Selects links in both navbar and responsive class */
+	.navbar.responsive a {
+		float: none;
+		display: block;
+	  	text-align: left;
+	}
+	
+	/* Selects dropdown in the navbar and responsive class */
+	.navbar.responsive .dropdown {float: none;}
+    	
+	/* Selects dropdown content in the navbar and responsive class */
+	.navbar.responsive .dropdown-content {
+		position: relative;
+		/* Dropdown stays open in responsive so user knows what page they are on - removing this line of code makes the dropdown work normally */
+		display: block;
+	}
+	
+	/* Selects dropdown button in the navbar and responsive class */
+	.navbar.responsive .dropdown .dropbtn {
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+	
+	/* Selects hamburger class (menu icon) */
+	.hamburger {
+		cursor: pointer;
+		float: right;
+		transition: ease-in-out.3s;
+		position: relative;
+		padding-right: 5px;
+		display: block;
+	}
+	
+	/* CSS for the 3 bars, adding a transition effect as well so when the animation is run there is a smooth transition */
+	.bar1, .bar2, .bar3 {
+		width: 35px;
+		height: 5px;
+		background-color: white;
+		margin: 6px 0;
+		transition: 0.3s;
+	}
+	
+	/* Animation, where bars 1 and 3 will move to a 45 degree angle and the middle bar will disappear */
+	.change .bar1 {transform: translate(0, 11px) rotate(-45deg);}
+	.change .bar2 {opacity: 0;}
+	.change .bar3 {transform: translate(0, -11px) rotate(45deg);}
+}
+/*Navigation Bar CSS Section End */
+
+/* Footer: Inspiration from https://lowylori.github.io/a3web/index.html */
+/* Customization of footer background */
+footer {
+	position: static;
+	background-color: #4f445f;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/* Customization of footer p element */
+.footertext p {
+	color: #FFF;
+	text-align: center;
+	font-weight: normal;
+	font-size: 13px;
+	font-family: helvetica, arial, sans-serif;
+}
+
+
+/* Customization of all footer social media icons */
+.fab {
+	padding: 15px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+	transition: .3s ease-in-out;
+}
+
+/* Customization of footer social media icon hover - makes icon semi-transparent when user hovers over it */
+.fab:hover {
+    opacity: 0.5;
+}
+
+/* Customization of footer circle */
+.fa-circle {
+	background: #F99F19;
+}
+
+/* Centers the icon on the webpage */
+.centericon {
+	display: flex;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+/* AGOL Solutions Page Div boxes */
+.wrapped-content {
+	margin: 20px auto;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 35vh;
+	background-color: transparent;
+	width: 80%;
+	padding: 0%;
+	border-radius: 15px;
+}
+/* AGOL Solutions Page, first box */
+.wrapped-content1 {
+	margin: 20px auto;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 25vh;
+	background-color: transparent;
+	width: 80%;
+	padding: 0%;
+	border-radius: 15px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+  }
+
+/* Solutions Page Div text boxes */
+.wrapped-text-box {
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #f7f7f7;
+	border-radius: 15px;
+	padding-bottom: 25px;
+} 
+
+.wrapped-text-box-home {
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 15px;
+} 
+
+/* AGOL Solutions Page Images */
+.solutionimage {
+	max-width: 100%;
+	float: left;
+	display: flex;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 15px;
+}
+
+/* Methods Page Images */
+.img-small {
+    width: 768px;
+    height: 576px;
+    border: solid;
+    border-radius: 15px;
+    border-color: #544652
+}
+
+/* Expanding Button- Integrated Method*/
+#container{
+    display: flex;
+    flex-direction: column;
+    columns: 2;
+    margin: 0 auto;
+    text-align: center;
+	border-radius: 15px;
+	padding-bottom: 25px;
+}
+
+/* Expanding Button- AGOL Method*/
+#containerAGOL{
+    display: flex;
+    flex-direction: column;
+    columns: 2;
+    margin: 0 auto;
+    text-align: center;
+	border-radius: 15px;
+	padding-bottom: 25px;
+}
+
+/* Expanding Button- Other Methods*/
+#containerOther{
+    display: flex;
+    flex-direction: column;
+    columns: 2;
+    margin: 0 auto;
+    text-align: center;
+	border-radius: 15px;
+}
+
+@media only screen and (min-width: 1200px) {
+	/* fixing footer on things we tried page for a extra large screen */
+	#containerOther {padding-bottom: 250px;}
+}
+
+
+.ExpandingButton{
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: space-between;
+    background-color: #4f445f;
+    color: white;
+    cursor: pointer;
+    padding:1.5em;
+    margin-bottom: .3em;
+    border: black .5px;
+    font-size: 15px;
+    font-weight: bold;
+	border-radius: 15px;
+}
+
+.Article {
+    margin-left: 15%;
+    margin-right: 15%;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    line-height: 1.5;
+    text-align: justify;
+	border-radius: 15px;
+}
+   
+.active,.ExpandingButton:hover{
+    background-color: #8d7fa1;
+}
+
+/* Customization of banner class */
+.home-banner {
+	position: relative;
+	width: 100%;
+	height: 600px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+/* Customization of h1 element in banner class */
+.home-banner h1 {
+	text-align: center;
+	font-size: 5rem;
+	padding: 20px;
+	margin: 15px;
+	color: #FFF;
+	opacity: 0.8;
+}
+
+/* Customization of home-vidcontainer class */
+.home-vidcontainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+}
+
+/* Customization of dividing lines */
+hr.rounded {
+	border-radius: 6px;
+	border-top: 3px solid #544652;
+	margin: 25px;
+}
+
+/* Paragraph styling for home page */
+.home p {
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+}
+
+
+.ExpandingButton:after {
+    content: '\002B';
+    color: white;
+    font-size: 20px;
+}
+
+.current:after {
+    content: "\2212";
+    color: white;
+    font-size: 20px;
+}
+
+/* Create aligned pictures, code inspired by https://www.w3schools.com/howto/howto_css_images_side_by_side.asp*/
+.pictcolumn {
+	width: 50%;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pictrow{
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+	align-items: center;
+}
+
+.picttext{
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Things We Tried Page Images */
+.thingswetried_images {
+	max-width: 100%;
+	display: flex;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 15px;
+}
+
+/* Customization on the teams button */
+.link {
+    background-color: #544652;
+    border: none;
+    color: white;
+    padding: 5px 25px;
+    justify-content: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 18px;
+    flex-basis: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+}
+/* Customization of team-link class */
+.team-link {
+    margin: 20px;
+}
+
+
+/* Responsive design for resizing images */
+img {
+	max-width: 100%;   
+	height: auto;
+}	

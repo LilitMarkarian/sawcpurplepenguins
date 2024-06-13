@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Integrated Method</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon Icon is taken from https://www.flaticon.com/ -->
+	<link rel="icon" href="assets/penguin.png">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <!-- This logo will appear on every page of our website -->
+        <!-- When you click the top banner, it will link back to the homepage -->
+        <a href = "index.html">
+            <div class="logo">
+                <img src= "assets/PurplePenguinsLogo.png" alt="Purple Penguins Logo">
+            </div>
+        </a>
+    </header>
+
+    <!--
+        NAVBAR START
+        Inspired by: https://lowylori.github.io/a3web/index.html
+    -->
+    <div class="navbar" id="myNav">
+        <!-- Creating a div to store the hamburger menu icon with a function that run when the user clicks the icon -->
+        <div class="hamburger" onclick="responsiveNav(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+        <a href="index.html">Problem Statement</a>
+        <div class="dropdown">
+            <button class="dropbtn">Methodology</button>
+            <!-- Methodology dropdown menu content -->
+            <div class="dropdown-content">
+                <a href="agolmethod.html">AGOL Method</a>
+                <a href="integratedmethod.html" class="active">Integrated Method</a> <!-- Indicates currently active page -->
+            </div> 
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Solution</button>
+            <!-- Solutions dropdown menu content -->
+            <div class="dropdown-content">
+                <a href="agolsolution.html">AGOL Solution</a>
+                <a href="integratedsolution.html">Integrated Solution</a>
+            </div> 
+        </div>
+        <a href="thingswetried.html">Things We Tried</a>
+        <a href="team.html">Meet the Team</a>
+    </div>
+
+    <!--NAVBAR END-->
+    
+    <h1> Integrated Methodology</h1>
+    <div class= "pictrow"> 
+        <div class= "pictcolumn">
+            <div class= "picttext">
+                <img src="assets/Integratedsolutionsedit.png" alt="Integrated Solutions Flowchart" class="img-small">
+            </div>
+        </div>  
+    </div>
+<!--Accordion Button Start-->	
+	<div id = "container">
+        <button type = "button" class="ExpandingButton">Step 1: Create Survey</button>
+        <div class="Article">
+            <p>Created a survey in Survey123 Connect. The survey was 
+                created using SAWC needs in mind, collecting location based info, type of request, date, attachment. Although some of the information we had to add as questions 
+                are already collected in the metadata of the form, we needed to create fields for them to be stored, to keep the next step simplified in power automate.
+                Publish the survey once its created. The following fields were created on the survey (note: these are not the exact field names)</p>
+                <img src="assets/surveyxlsx.png" class="center" alt="the workbook containing the survey fields and esri field types">
+            <ul>
+                <li>Request Date: the date and time that the request is submitted</li>
+                <li>Email: The user's email address, hidden (needed for automation workflow)</li>
+                <li>Campus Zone Number: Integer from 1-11</li>
+                <li>Priority Level: integer from 1-3</li>
+                <li>Request Type: a string pick list with options for request type - default value set to 'general inspection'</li>
+                <li>Request Location: geopoint of current/selected location</li>
+                <li>point_x: calculate field hidden for longitude (needed for automation workflow)</li>
+                <li>point_y: calculate field hidden for latitude (needed for automation workflow)</li>
+                <li>Additional details: text field to provide further details of the issue</li>
+                <li>Attachment: image field to attach an image of the issue</li>
+            </ul>
+        </div>
+
+        <button type = "button" class="ExpandingButton">Step 2: Automated Workflow for creating an Excel spreadsheet</button>
+        <div class="Article">
+            <p>We created an excel workbook that has three sheets, one for each level of priority. The fields in the sheets are the same as the survey fields, with the 
+                addition of the following: </p>
+            <ul>
+                <li>Assigned: Designed to be a Y/N field to indicate if the task has been assigned</li>
+                <li>Employee: The full name of the employee assigned to the task to be updated by the manager</li>
+                <li>Completed: Designed to be a Y/N field to indicate if the task has been completed</li>
+                <li>Date Completed: the date in a standardized format that reflects the day the task was completed</li>
+            </ul>
+            <img src="assets/blankExcel.png" class="center" alt="Excel table">
+
+
+            <p>First, we used Power Automate aka Flow which is a microsoft product in the Office 365 suite. The second software was called Make, which can be 
+                viewed in 'Things we Tried'.
+                <br>
+                In Power Automate, we created a webhook that links to Survey123. Additionally, we created another webhook linking to a personal 
+                Excel Onedrive account. The flow is triggered when a response is submitted to the linked survey. Next, an action is preformed to 
+                convert the date/time from Epoch time to standard UTC time. Then a series of conditional statements are used to assess the priority 
+                level of the survey, sorting each of the three priority levels into different tables in the excel spreadsheet. From there, we add a
+                row into the excel table, populating it with the feature attributes from the survey. We assign the string 'N' to the field assigned and
+                completed- to be later changed by the manager.</p>
+            
+        </div>
+
+
+        <button type = "button" class="ExpandingButton">Step 3: Automated Workflow for generating reports</button>
+        <div class="Article">
+            <p>We created a PDF report that shows how many issues there have been in the time period. The PDF contains the title, the date converted into a mm/dd/yyyy format, and the number of incidents</p>
+	<img src="assets/PDFReport.png" class="center" alt="PDF Report">
+	<p>The PDF was generated using a Microsoft Power Automate Flow on a recurring basis. The Flow would be set to run every day/week/month. The information was taken from the excel workbook created in Step 2. Variables named date and counter were created to store the current date and 
+	a variable used for iterations. The date was converted from UTC to a mm/dd/yyyy format so that it could be tested against each row in the excel sheet. This ensures that only the rows with the date from the current month/day/week
+	are included in the report. An HTML document was used for formatting, which was then converted into a PDF. This PDF is sent in a link via email. 
+		<br>
+	Depending on what is wanted on the report, the Power Automate Flow could also record the number of a certain type of problem, how many problems were resolved, and other counts. The model that has been created has
+	potential to generate more information. 
+	</p>
+        </div>
+    </div>
+<!--Accordion Button end-->	
+  <!-- JS script for hamburger menu animation, expanding buttons and responsive navbar -->
+    <script src="js/script.js"></script>
+    <!-- Work in Progress -->
+<footer>
+  <div class="footertext">
+    <p>Copyright of Purple Penguins, 2024.</p>
+  </div>
+  <!-- Clicking on the circle brings you to the home page -->
+  <div class="centericon">
+    <a href="index.html" class="fab fa-circle" title="Purple Penguins Logo Color"></a>
+  </div>
+</footer>
+
+</body>
+</html>
