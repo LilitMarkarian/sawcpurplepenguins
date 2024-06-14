@@ -101,72 +101,45 @@
             </div>  
         </div>
         <h2> Operational Map Methodology</h2>
+        <div class="wrapped-text-box-home">
+            <div class="home">
+        <p>The Southern African Wildlife College requested Operational Maps be created so that the maintenance staff could easily access the relevant operational data. 
+            4 maps were created that 
+            included water network data, sewage network data, electrical network data and Wi-Fi points on campus.   
+         </p>
+            </div>
+        </div>
         <!--Accordion Button Start-->	
         <div id = "containerAGOL">
-            <button type = "button" class="ExpandingButton">Step 1: Deploy ArcGIS Solution</button>
+            <button type = "button" class="ExpandingButton">Step 1: Upload data to ArcGIS Pro </button>
             <div class="Article">
-                <p>Log into ArcGIS Solutions, through the ArcGIS Online portal. Search for the relevant solution you are looking for; in this case it was “Parks and Grounds Management”. 
-                    Click the “Deploy now” button to deploy this solution so your account.</p>
+                <p>Data provided from the client was brought into ArcGIS Pro using the Fleming school license and the old geodatabase was sectioned off into the 4 different categories: 
+                    Sewage, Wi-Fi, Water and Electrical. 
+                    These categories and break down of data were confirmed from the client to be an accurate representation of which data should fall under the 4 categories. </p>
             </div>
             
         
-            <button type = "button" class="ExpandingButton">Step 2: Edit Surveys</button>
+            <button type = "button" class="ExpandingButton">Step 2: Add data to separate file geodatabases</button>
             <div class="Article">
-                <p>Once deployed on your account, you are able to start editing the components you would like to use. Firstly, open both surveys in Survey123 Connect to be able to
-                    edit them. While doing this, make sure to update the titles and names on the surveys to match the current project.
-                    Once any edits are made to the survey to meet the requirements you are looking to meet, republish the survey. This can be done by clicking the 
-                    publish button, on the edit panel.  
+                <p>Once the data layers were separated, the feature layers were added to their own geodatabase using ArcGIS Pro. 
+                    These files were then zipped so they could be uploaded to AGOL.   
                 </p>
             </div>
         
         
-            <button type = "button" class="ExpandingButton">Step 3: Edit Workforce</button>
+            <button type = "button" class="ExpandingButton">Step 3: Upload to ArcGIS Online</button>
             <div class="Article">
-                <p> Next, edit the Workforce project to add any relevant staff to the project and assign them roles. To add workers, go to your relevant workforce project and click the 
-                    gear wheel called “configure”. Once in this window, you can add more mobile workers or dispatchers through “users” 
-                    page on the top bar. Select the staff you would like added and a project role.  </p>
+                <p> Once uploaded to AGOL, feature layers were created for each file geodatabase. The database was designed in this way to ensure easier uploading to AGOL 
+                    as the client will primarily be working off AGOL in the future. If in the future the client needs to bring this data offline, 
+                    they would be able to download the file geodatabases from AGOL and be able to add this data to QGIS.   </p>
             </div>
         
-            <button type = "button" class="ExpandingButton">Step 4: Data Collection</button>
+            <button type = "button" class="ExpandingButton">Step 4: Create Web Maps</button>
             <div class="Article">
-                <p> Next, open the surveys you created and add requests into them. This will be important for assigning requests to people. 
-                    You can add requests through both the external and internal surveys to ensure they work.   </p>
-            </div>
-            <button type = "button" class="ExpandingButton">Step 5: Assign Tasks</button>
-            <div class="Article">
-                <p> If you logged out of Workforce, log back into Workforce and practice assigning an open task to a staff member. 
-                    This is to test out that the task assigns properly and that this change is 
-                    reflected in the dashboards explored in step 6. To do this, Open the Workforce project by clicking it. 
-                    You can either select a request on the map by clicking on it and click “create assignment” to bring up a window to add assignment type and relevant details such as 
-                    priority, worker assigned to as well as add any more details to the request. To push it through, click “create assignment”. 
-                    New assignments can also be created by managers by clicking the “+ Assignments” button on the top bar. The same as above, fill in the details and assign it to a worker. 
-                    Now workers will be able to see tasks assigned to them.</p>
-
-            </div>
-            <button type = "button" class="ExpandingButton">Step 6: Edit Dashboards</button>
-            <div class="Article">
-                <p> Next, edit the dashboards and requests centers to match clients name and needs. By selecting and editing each dashboard separately from your contents page, 
-                    update the titles and names of the dashboards to match the project. You can do this by clicking “edit dashboard” and once in the dashboard, you can edit every part of the 
-                    dashboard by clicking the “…” over every component and opening the 
-                    settings, called “configure”. 
-                    On the dashboard, ensure the data being presented makes sense in relation to the project goals 
-                    and select new questions to be presented in the graph area if needed.  
-                </p>
-            </div>
-            <button type = "button" class="ExpandingButton">Step 7: Generate Reports using ArcGIS Online Jupyter Notebook</button>
-            <div class="Article">
-                <p> Utilize ArcGIS API for Python within ArcGIS Online Jupyter Notebook environment to do the following:</p>
-                <ul>
-                    <li>Create a New Jupyter Notebook</li>
-                    <li>Access and Load Survey123 Data</li>
-                    <li>Create Reporting Templates</li>
-                    <li>Create Tasks</li>
-                    <li>Automate Reporting</li>
-                    <li>Set up task scheduling</li>
-                </ul>
-                <p>Connecting Jupyter Notebooks to ArcGIS Online Survey123 makes it easy to select data for reports. By automating the notebook with tasks,
-                reports can be generated regularly, whether daily, weekly, or monthly. This setup simplifies the process and ensures timely updates for customized reports.
-                Although we're currently unable to automate report delivery to the client, we plan to gather feedback and work towards implementing their preferred method whenever we are on-site.</p>
+                <p> Four Web Maps were created to outline the appropriate data. These web maps featured the appropriate category of data, with the ability to turn on water, 
+                    sewage and electrical networks. This was done for the staff to have easier access to data that could affect operations such as building new structures on 
+                    campus or needing to dig below ground. 
+                    They can easily flip between layers if needed, or keeping the four maps separate as well.   </p>
             </div>
         </div>
         <!--Accordion Button end-->	
