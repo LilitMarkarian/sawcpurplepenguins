@@ -603,7 +603,7 @@ img {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
+/* Caption text for Operations Maps Page*/
 .textops {
   color: #fdfbfb;
   font-size: 20px;
@@ -614,12 +614,12 @@ img {
   text-align: center;
 }
 
-.textems {
-	color: #060606;
+.textCMV {
+	color: #f9f4f4;
 	font-size: 20px;
 	padding: 8px 12px;
 	position: absolute;
-	bottom: 15px;
+	bottom: 42px;
 	width: 100%;
 	text-align: center;
   }
