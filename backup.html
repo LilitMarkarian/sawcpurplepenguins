@@ -52,85 +52,53 @@
 
         <!--NAVBAR END-->
 
-        <h1> ArcGIS Online Methodology</h1>
-        <div class= "pictrow"> 
+        <h1> Backup Script </h1>
+        <div class="wrapped-text-box-home">
+        <div class="home">
+    <p>Many data layers are constantly being updated and moved. A method to backup essential data is crucial to sustaining the Southern African Wildlife College’s GIS. ArcGIS Notebooks provides an easy-to-use interface to automate processes. 
+        It runs on ArcGIS Online (AGOL), making it easy to access data. This can be set as a task to be run as needed or run manually.
+     </p>
+        </div>
+    </div>
+    
+        <!--Accordion Button Start-->	
+        <div id = "containerAGOL">
+            <button type = "button" class="ExpandingButton">Step 1: Add backup tag</button>
+            <div class="Article">
+                <p>ArcGIS Notebooks requires the use of item ids to access information on items. Creating a list of ids was found to be too time consuming and would cause the code to be messy. 
+                    Instead, every layer is saved with the tag ‘Backup’. The backup script searched for this tag, and created a list of all the ids that will be backed up.</p>
+            </div>
+            
+        
+            <button type = "button" class="ExpandingButton">Step 2: Export each layer, check for errors</button>
+            <div class="Article">
+                <p>The code exported each layer to a file geodatabase in the contents of AGOL. However, there is some error handling to prevent downloading of view layers, which are duplicates of feature layers. 
+                    The script also showed a message if the user tries to download a file without an item id, such as a web map. The script counted and printed out how many items were downloaded in a message.  
+                </p>
+            </div>
+        
+        
+            <button type = "button" class="ExpandingButton">Step 3: Download layers to local machine via links</button>
+            <div class="Article">
+                <p> Notebooks did not have a way for the script to automatically download to the local machine. Therefore, the user must download each layer manually via links. The script prints out each link, 
+                    prompting the user to download each item.   </p>
+            </div>
+        
+            <button type = "button" class="ExpandingButton">Step 4: Indicate to the code if files have been downloaded</button>
+            <div class="Article">
+                <p> The user will be required to interact with the script for this code. The backup script prompted the user to enter ‘y’ if they have downloaded all the layers, or ‘n’ if they have not. 
+                    If they have downloaded the file geodatabases, the new file geodatabases in AGOL will be deleted to save space. If not, the user will be shown the links again.    </p>
+            </div>
+           
+        </div>
+        <!--Accordion Button end-->	
+     <div class= "pictrow"> 
             <div class= "pictcolumn">
                 <div class= "picttext">
                     <img src="assets/AGOLSolutionsedit.png" alt="AGOL Solutions Flowchart" class="img-small">
                 </div>
             </div>  
         </div>
-    
-        <!--Accordion Button Start-->	
-        <div id = "containerAGOL">
-            <button type = "button" class="ExpandingButton">Step 1: Deploy ArcGIS Solution</button>
-            <div class="Article">
-                <p>Log into ArcGIS Solutions, through the ArcGIS Online portal. Search for the relevant solution you are looking for; in this case it was “Parks and Grounds Management”. 
-                    Click the “Deploy now” button to deploy this solution so your account.</p>
-            </div>
-            
-        
-            <button type = "button" class="ExpandingButton">Step 2: Edit Surveys</button>
-            <div class="Article">
-                <p>Once deployed on your account, you are able to start editing the components you would like to use. Firstly, open both surveys in Survey123 Connect to be able to
-                    edit them. While doing this, make sure to update the titles and names on the surveys to match the current project.
-                    Once any edits are made to the survey to meet the requirements you are looking to meet, republish the survey. This can be done by clicking the 
-                    publish button, on the edit panel.  
-                </p>
-            </div>
-        
-        
-            <button type = "button" class="ExpandingButton">Step 3: Edit Workforce</button>
-            <div class="Article">
-                <p> Next, edit the Workforce project to add any relevant staff to the project and assign them roles. To add workers, go to your relevant workforce project and click the 
-                    gear wheel called “configure”. Once in this window, you can add more mobile workers or dispatchers through “users” 
-                    page on the top bar. Select the staff you would like added and a project role.  </p>
-            </div>
-        
-            <button type = "button" class="ExpandingButton">Step 4: Data Collection</button>
-            <div class="Article">
-                <p> Next, open the surveys you created and add requests into them. This will be important for assigning requests to people. 
-                    You can add requests through both the external and internal surveys to ensure they work.   </p>
-            </div>
-            <button type = "button" class="ExpandingButton">Step 5: Assign Tasks</button>
-            <div class="Article">
-                <p> If you logged out of Workforce, log back into Workforce and practice assigning an open task to a staff member. 
-                    This is to test out that the task assigns properly and that this change is 
-                    reflected in the dashboards explored in step 6. To do this, Open the Workforce project by clicking it. 
-                    You can either select a request on the map by clicking on it and click “create assignment” to bring up a window to add assignment type and relevant details such as 
-                    priority, worker assigned to as well as add any more details to the request. To push it through, click “create assignment”. 
-                    New assignments can also be created by managers by clicking the “+ Assignments” button on the top bar. The same as above, fill in the details and assign it to a worker. 
-                    Now workers will be able to see tasks assigned to them.</p>
-
-            </div>
-            <button type = "button" class="ExpandingButton">Step 6: Edit Dashboards</button>
-            <div class="Article">
-                <p> Next, edit the dashboards and requests centers to match clients name and needs. By selecting and editing each dashboard separately from your contents page, 
-                    update the titles and names of the dashboards to match the project. You can do this by clicking “edit dashboard” and once in the dashboard, you can edit every part of the 
-                    dashboard by clicking the “…” over every component and opening the 
-                    settings, called “configure”. 
-                    On the dashboard, ensure the data being presented makes sense in relation to the project goals 
-                    and select new questions to be presented in the graph area if needed.  
-                </p>
-            </div>
-            <button type = "button" class="ExpandingButton">Step 7: Generate Reports using ArcGIS Online Jupyter Notebook</button>
-            <div class="Article">
-                <p> Utilize ArcGIS API for Python within ArcGIS Online Jupyter Notebook environment to do the following:</p>
-                <ul>
-                    <li>Create a New Jupyter Notebook</li>
-                    <li>Access and Load Survey123 Data</li>
-                    <li>Create Reporting Templates</li>
-                    <li>Create Tasks</li>
-                    <li>Automate Reporting</li>
-                    <li>Set up task scheduling</li>
-                </ul>
-                <p>Connecting Jupyter Notebooks to ArcGIS Online Survey123 makes it easy to select data for reports. By automating the notebook with tasks,
-                reports can be generated regularly, whether daily, weekly, or monthly. This setup simplifies the process and ensures timely updates for customized reports.
-                Although we're currently unable to automate report delivery to the client, we plan to gather feedback and work towards implementing their preferred method whenever we are on-site.</p>
-            </div>
-        </div>
-        <!--Accordion Button end-->	
-
 
 
 
