@@ -674,3 +674,16 @@ img {
 	padding-right: 50px;
 } 
 
+
+.paragraphStyle2 {
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 15px;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-left: 50px;
+	padding-right: 50px;
+} 
+
