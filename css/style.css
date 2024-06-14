@@ -676,7 +676,7 @@ img {
 	justify-content: center;
 	display: flex;
 	flex-direction: column;
-	tex-align: center;
+	text-align: center;
 	border-radius: 15px;
 	margin-left: 10%;
 	margin-right: 10%;
