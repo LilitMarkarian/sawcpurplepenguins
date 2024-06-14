@@ -651,7 +651,7 @@ img {
 }
 
 /*Paragraphs styling*/
-#paragraphStyle {
+.paragraphStyle {
 	justify-content: center;
 	display: flex;
 	flex-direction: column;
