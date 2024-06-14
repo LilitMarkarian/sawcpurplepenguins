@@ -614,6 +614,16 @@ img {
   text-align: center;
 }
 
+.textems {
+	color: #060606;
+	font-size: 20px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 15px;
+	width: 100%;
+	text-align: center;
+  }
+
 /* Caption text */
 .text {
 	color: #f2f2f2;
