@@ -697,3 +697,8 @@ img {
 	padding-right: 50px;
 } 
 
+/*List styling centered*/
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
