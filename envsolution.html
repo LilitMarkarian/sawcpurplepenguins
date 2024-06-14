@@ -63,44 +63,52 @@
     
         <!--Accordion Button Start-->	
         <div id = "containerAGOL">
-            <button type = "button" class="ExpandingButton">Step 1: Deploy ArcGIS Solution</button>
+            <button type = "button" class="ExpandingButton">Step 1: Build the surveys</button>
             <div class="Article">
-                <p>Log into ArcGIS Solutions, through the ArcGIS Online portal. Search for the relevant solution you are looking for; in this case it was “Parks and Grounds Management”. 
-                    Click the “Deploy now” button to deploy this solution so your account.</p>
+                <p>The first step in designing this solution was creating two Survey123 surveys, one for collecting data on alien invasive species and the second for collecting data on native tree species. 
+                    When published, these surveys produced three AGOL items (a hosted feature layer, a hosted feature layer, view of the results, and a hosted feature layer, view of the form). 
+                    The surveys were based on questions that were provided by the client.</p>
             </div>
             
         
-            <button type = "button" class="ExpandingButton">Step 2: Edit Surveys</button>
+            <button type = "button" class="ExpandingButton">Step 2: Web Maps</button>
             <div class="Article">
-                <p>Once deployed on your account, you are able to start editing the components you would like to use. Firstly, open both surveys in Survey123 Connect to be able to
-                    edit them. While doing this, make sure to update the titles and names on the surveys to match the current project.
-                    Once any edits are made to the survey to meet the requirements you are looking to meet, republish the survey. This can be done by clicking the 
-                    publish button, on the edit panel.  
+                <p>The first web map is used to display the alien invasive species recorded on campus, using the hosted feature layer created 
+                    from the survey. This map uses the base map “BasemapVTPK_BuildingLabels”. When deciding on the colors to use to represent 
+                    each individual species, colors were matched to photos of the plants themselves, which the client provided. 
+                    The second web map created for this solution was the Native Tree Species map. 
+                    This map was created using the hosted feature layer created from the corresponding survey and uses the base maps 
+                    “BasemapVTPK_BuildingLabels”. Trees recorded are symbolized with a tree on the map. 
+                      
                 </p>
             </div>
         
         
-            <button type = "button" class="ExpandingButton">Step 3: Edit Workforce</button>
+            <button type = "button" class="ExpandingButton">Step 3: Dashboards</button>
             <div class="Article">
-                <p> Next, edit the Workforce project to add any relevant staff to the project and assign them roles. To add workers, go to your relevant workforce project and click the 
-                    gear wheel called “configure”. Once in this window, you can add more mobile workers or dispatchers through “users” 
-                    page on the top bar. Select the staff you would like added and a project role.  </p>
+                <p>Using the web maps and survey results data designed for both the Alien Invasive Species and the Native Tree Species, 
+                    two dashboards were designed to give a visualization of the results. 
+                    The Alien Invasive Species Dashboard outlines the web map showing where all collected points are, 
+                    how many observations have been made, and how many unique species recorded. The dashboard has two bar graphs, 
+                    one outlining the control methods used and the second breaking down the invasive species by plant recorded. 
+                    The Native Tree Dashboard outlines the web map showing where all collected points are, number of trees recorded, 
+                    the average tree health for all trees recorded as well as a table outlining all the data collected.
+                     </p>
             </div>
         
-            <button type = "button" class="ExpandingButton">Step 4: Data Collection</button>
+            <button type = "button" class="ExpandingButton">Step 4: Building the Experience Builder</button>
             <div class="Article">
-                <p> Next, open the surveys you created and add requests into them. This will be important for assigning requests to people. 
-                    You can add requests through both the external and internal surveys to ensure they work.   </p>
+                <p> Using the information outlined in Steps 1-3, the 5 pages of the experience builder were created. The home page is comprised of a background photo, as well as two text boxes. Each text box is connected to the survey results data, outlining the number of survey entries submitted for the corresponding survey.
+                    The second page of the experience builder is designed as an embed widget, that embeds the link to the Alien Species Dashboard on the full screen on the page. 
+                    The third page of the experience builder is designed as an embed widget, that embeds the link to the Native Tree Species Dashboard on the full screen on the page. 
+                    The fourth page of the experience builder is a web map widget, that connects to the Water Network Operational Map. This map outlines the water network on campus, with the option to turn on the sewage and electrical lines. 
+                    The fifth page of the experience builder is a web map widget, that connects to the Sewage Network Operational Map. This map outlines the sewage network on campus, with the option to turn on the water and electrical lines
+                     </p>
             </div>
-            <button type = "button" class="ExpandingButton">Step 5: Assign Tasks</button>
+            <button type = "button" class="ExpandingButton">Step 5: Configuring the Field Maps</button>
             <div class="Article">
-                <p> If you logged out of Workforce, log back into Workforce and practice assigning an open task to a staff member. 
-                    This is to test out that the task assigns properly and that this change is 
-                    reflected in the dashboards explored in step 6. To do this, Open the Workforce project by clicking it. 
-                    You can either select a request on the map by clicking on it and click “create assignment” to bring up a window to add assignment type and relevant details such as 
-                    priority, worker assigned to as well as add any more details to the request. To push it through, click “create assignment”. 
-                    New assignments can also be created by managers by clicking the “+ Assignments” button on the top bar. The same as above, fill in the details and assign it to a worker. 
-                    Now workers will be able to see tasks assigned to them.</p>
+                <p> Once the experience builder was built, the team created Field Maps for both the Alien Species web maps and the Native Tree Species web maps. Using the Field Maps builder on AGOL, each individual web map was selected, and forms were built with the original survey questions. This will allow users of this 
+                    solution to revisit the same species entered over time and make any appropriate edits to the data. </p>
 
             </div>
             <button type = "button" class="ExpandingButton">Step 6: Edit Dashboards</button>
@@ -113,21 +121,7 @@
                     and select new questions to be presented in the graph area if needed.  
                 </p>
             </div>
-            <button type = "button" class="ExpandingButton">Step 7: Generate Reports using ArcGIS Online Jupyter Notebook</button>
-            <div class="Article">
-                <p> Utilize ArcGIS API for Python within ArcGIS Online Jupyter Notebook environment to do the following:</p>
-                <ul>
-                    <li>Create a New Jupyter Notebook</li>
-                    <li>Access and Load Survey123 Data</li>
-                    <li>Create Reporting Templates</li>
-                    <li>Create Tasks</li>
-                    <li>Automate Reporting</li>
-                    <li>Set up task scheduling</li>
-                </ul>
-                <p>Connecting Jupyter Notebooks to ArcGIS Online Survey123 makes it easy to select data for reports. By automating the notebook with tasks,
-                reports can be generated regularly, whether daily, weekly, or monthly. This setup simplifies the process and ensures timely updates for customized reports.
-                Although we're currently unable to automate report delivery to the client, we plan to gather feedback and work towards implementing their preferred method whenever we are on-site.</p>
-            </div>
+            
         </div>
         <!--Accordion Button end-->	
 
