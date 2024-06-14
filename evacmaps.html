@@ -52,7 +52,95 @@
 
         <!--NAVBAR END-->
 
-        <h1> ArcGIS Online Methodology</h1>
+        <h1>Evacuation Maps</h1>
+      <div class= "pictrow">
+            <div class= "pictcolumn">
+                <div class= "picttext">
+                    <img src="assets/EvacuationMap_1.png" alt="Evac Map 1"">
+                </div>
+            </div>  
+</div>  
+      <div class= "pictrow">
+            <div class= "pictcolumn">
+                <div class= "picttext">
+                    <img src="assets/EvacuationMap_2.png" alt="Evac Map 2"">
+                </div>
+            </div>  
+   
+</div>  
+       <div class= "pictrow">
+            <div class= "pictcolumn">
+                <div class= "picttext">
+                    <img src="assets/EvacuationMap_3.png" alt="Evac Map 3"">
+                </div>
+            </div>  
+</div>  
+
+    <div class="wrapped-text-box-home">
+        <div class="home">
+    <p>The Southern African Wildlife College requested evacuation maps to be created. These would be printed and displayed in the respective room. 
+        The symbology needed to be greyscale, as there is limited access to colour printers. The routes are the only element shown in colour to establish visual hierarchy.
+        Using QGIS Map Atlas, nine PDFs maps were created, three of which are shown above. 
+     </p>
+        </div>
+    </div>
+
+        <!--Accordion Button Start-->	
+        <div id = "containerAGOL">
+            <button type = "button" class="ExpandingButton">Step 1: Acquiring Data</button>
+            <div class="Article">
+                <p>Exit points needed to be created to show where someone can exit a building. Survey 123 was used to create a point layer and collect basic information about the exit point,
+                    including name and location. These were collected in the main area of the campus on site. Some were also digitized with QGIS. A field for the direction of the exit points was 
+                    also added in QGIS to orient the rectangular symbology. Each door direction was either up, down, left, right, or angled down.</p>  
+
+                <p>The fire equipment and assembly points were collected in the previous year. However, new points were added in both layers for the ranger camp area. These layers were provided by SAWC.  </p>
+            </div>
+            
+        
+            <button type = "button" class="ExpandingButton">Step 2: Data Compilation </button>
+            <div class="Article">
+                <p>The College chose QGIS as their desktop software to create static maps. All layers were added to a QGIS project file from a Geopackage. 
+                    The focus of this map is on the assembly points, fire extinguishers, and fire hoses. The rooms and roads show where the reader is in comparison
+                    to the nearest assembly point, and how the user can go to it. The building, parking, exit point, college boundary, and Kempiana boundary are used 
+                    to provide context to the user on where the assembly points and rooms are located. Lastly, the evacuation map sections are a completely invisible 
+                    layer that is used for the layout extent of the final product.  
+                </p>
+            </div>
+        
+        
+            <button type = "button" class="ExpandingButton">Step 3: Loading in Style Files</button>
+            <div class="Article">
+                <p> Creating symbology for each individual layer was time consuming. Should the map file be lost or damaged, a method to easily implement specific symbology was created. 
+                    This was done through QGIS style file, which were created for each layer. These files contain symbology and labels for each layer. Colour printers are not easily 
+                    accessible to the College; therefore, the maps were styled as greyscale except for the annotations. The style files contain all symbology for the layers including 
+                    colour, size, labels, picture, and shape. This prevents the need for individually styling for each layer if the project file is lost.    </p>
+            </div>
+        
+            <button type = "button" class="ExpandingButton">Step 4: Creating Map Themes</button>
+            <div class="Article">
+                <p> The map layout had an overview map that shows were the main map extent is in comparison to the campus boundary. The overview map has the same layers but different colour
+                    choices to the main map, which requires the use of map themes. The main map layers were placed in a layer group, and any layer used in the overview map was copied into a 
+                    separate group. Separate symbology was applied to the layers in the overview map group, which was also stored in style files. The two groups were placed into map themes, 
+                    which the creator can toggle between.     </p>
+            </div>
+            <button type = "button" class="ExpandingButton">Step 5: Creating Maps in Map Atlas</button>
+            <div class="Article">
+                <p> The print layout brings in the map, and adds elements such as the title, supplementary text, scale bar, north arrow, legend, overview map, and optional annotations. A print layout 
+                    was created in QGIS. All map elements were greyscale except the annotations, which were red. Nine maps were generated using Map Atlas, which is a series of maps that have the same 
+                    map elements but a different extent. The evacuation map sections were used to define the extent.  </p>
+
+            </div>
+            <button type = "button" class="ExpandingButton">Step 6: Exporting PDFs</button>
+            <div class="Article">
+                <p> Using the QGIS print layout, the maps PDFs were generated. Maps were exported together or separately depending on if route annotations were created in QGIS or by hand. 
+                    These routes show how the user gets to the nearest assembly point from their room. When the annotations are done in QGIS, the PDFs need to be exported separately, since the routes 
+                    are different depending on the room. If these routes are drawn by hand the maps can be exported all at once.  
+                </p>
+            </div>
+            
+        </div>
+        <!--Accordion Button end-->	
+
         <div class= "pictrow"> 
             <div class= "pictcolumn">
                 <div class= "picttext">
@@ -60,78 +148,6 @@
                 </div>
             </div>  
         </div>
-    
-        <!--Accordion Button Start-->	
-        <div id = "containerAGOL">
-            <button type = "button" class="ExpandingButton">Step 1: Deploy ArcGIS Solution</button>
-            <div class="Article">
-                <p>Log into ArcGIS Solutions, through the ArcGIS Online portal. Search for the relevant solution you are looking for; in this case it was “Parks and Grounds Management”. 
-                    Click the “Deploy now” button to deploy this solution so your account.</p>
-            </div>
-            
-        
-            <button type = "button" class="ExpandingButton">Step 2: Edit Surveys</button>
-            <div class="Article">
-                <p>Once deployed on your account, you are able to start editing the components you would like to use. Firstly, open both surveys in Survey123 Connect to be able to
-                    edit them. While doing this, make sure to update the titles and names on the surveys to match the current project.
-                    Once any edits are made to the survey to meet the requirements you are looking to meet, republish the survey. This can be done by clicking the 
-                    publish button, on the edit panel.  
-                </p>
-            </div>
-        
-        
-            <button type = "button" class="ExpandingButton">Step 3: Edit Workforce</button>
-            <div class="Article">
-                <p> Next, edit the Workforce project to add any relevant staff to the project and assign them roles. To add workers, go to your relevant workforce project and click the 
-                    gear wheel called “configure”. Once in this window, you can add more mobile workers or dispatchers through “users” 
-                    page on the top bar. Select the staff you would like added and a project role.  </p>
-            </div>
-        
-            <button type = "button" class="ExpandingButton">Step 4: Data Collection</button>
-            <div class="Article">
-                <p> Next, open the surveys you created and add requests into them. This will be important for assigning requests to people. 
-                    You can add requests through both the external and internal surveys to ensure they work.   </p>
-            </div>
-            <button type = "button" class="ExpandingButton">Step 5: Assign Tasks</button>
-            <div class="Article">
-                <p> If you logged out of Workforce, log back into Workforce and practice assigning an open task to a staff member. 
-                    This is to test out that the task assigns properly and that this change is 
-                    reflected in the dashboards explored in step 6. To do this, Open the Workforce project by clicking it. 
-                    You can either select a request on the map by clicking on it and click “create assignment” to bring up a window to add assignment type and relevant details such as 
-                    priority, worker assigned to as well as add any more details to the request. To push it through, click “create assignment”. 
-                    New assignments can also be created by managers by clicking the “+ Assignments” button on the top bar. The same as above, fill in the details and assign it to a worker. 
-                    Now workers will be able to see tasks assigned to them.</p>
-
-            </div>
-            <button type = "button" class="ExpandingButton">Step 6: Edit Dashboards</button>
-            <div class="Article">
-                <p> Next, edit the dashboards and requests centers to match clients name and needs. By selecting and editing each dashboard separately from your contents page, 
-                    update the titles and names of the dashboards to match the project. You can do this by clicking “edit dashboard” and once in the dashboard, you can edit every part of the 
-                    dashboard by clicking the “…” over every component and opening the 
-                    settings, called “configure”. 
-                    On the dashboard, ensure the data being presented makes sense in relation to the project goals 
-                    and select new questions to be presented in the graph area if needed.  
-                </p>
-            </div>
-            <button type = "button" class="ExpandingButton">Step 7: Generate Reports using ArcGIS Online Jupyter Notebook</button>
-            <div class="Article">
-                <p> Utilize ArcGIS API for Python within ArcGIS Online Jupyter Notebook environment to do the following:</p>
-                <ul>
-                    <li>Create a New Jupyter Notebook</li>
-                    <li>Access and Load Survey123 Data</li>
-                    <li>Create Reporting Templates</li>
-                    <li>Create Tasks</li>
-                    <li>Automate Reporting</li>
-                    <li>Set up task scheduling</li>
-                </ul>
-                <p>Connecting Jupyter Notebooks to ArcGIS Online Survey123 makes it easy to select data for reports. By automating the notebook with tasks,
-                reports can be generated regularly, whether daily, weekly, or monthly. This setup simplifies the process and ensures timely updates for customized reports.
-                Although we're currently unable to automate report delivery to the client, we plan to gather feedback and work towards implementing their preferred method whenever we are on-site.</p>
-            </div>
-        </div>
-        <!--Accordion Button end-->	
-
-
 
 
         <!-- JS script for hamburger menu animation and responsive navbar -->
