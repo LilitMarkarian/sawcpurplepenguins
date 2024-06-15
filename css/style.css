@@ -91,6 +91,8 @@ header {
 	overflow: hidden;
 	background-color: #4f445f;
 	transition: .3s ease-in-out;
+	display: flex;
+	justify-content: center;
 }
 
 /* Customization of the links in the navigation bar */
