@@ -63,70 +63,72 @@
     
         <!--Accordion Button Start-->	
         <div id = "containerAGOL">
-            <button type = "button" class="ExpandingButton">Step 1: Deploy ArcGIS Solution</button>
+            <button type = "button" class="ExpandingButton">Step 1: Data Acquisition</button>
             <div class="Article">
-                <p>Log into ArcGIS Solutions, through the ArcGIS Online portal. Search for the relevant solution you are looking for; in this case it was “Parks and Grounds Management”. 
-                    Click the “Deploy now” button to deploy this solution so your account.</p>
+                <p>While on site, the team took a drive with Thokozani (Maintenance Manager) around campus, discussion of ways in which jobs are distributed and how 
+                    they are assigned. The team acquired an understanding of the different tasks around campus that are performed in preparing for environmental audits. 
+                    Essential data was gathered such as: current paper format of job cards, list of specialties within the maintenance team (ie. plumber, electrician etc.) 
+                    and list of current staff members.</p>
             </div>
             
         
-            <button type = "button" class="ExpandingButton">Step 2: Edit Surveys</button>
+            <button type = "button" class="ExpandingButton">Step 2: Configure Survey and Fields</button>
             <div class="Article">
-                <p>Once deployed on your account, you are able to start editing the components you would like to use. Firstly, open both surveys in Survey123 Connect to be able to
-                    edit them. While doing this, make sure to update the titles and names on the surveys to match the current project.
-                    Once any edits are made to the survey to meet the requirements you are looking to meet, republish the survey. This can be done by clicking the 
-                    publish button, on the edit panel.  
+                <p>The team used the data acquired to formulate a simplistic survey that provides the maintenance team with all the essential information required to assign 
+                    a task. The survey fields were created with data management in mind, setting field limits and considering how the data will be used in the following steps. 
+                    Once the survey was published, three AGOL items were produced (a hosted feature layer, a hosted feature layer, view of the results, and a hosted feature 
+                    layer, view of the form). The hosted feature table was then modified to add additional fields that were necessary for administrative purposes. Two domains 
+                    were created, one for a new field called ‘status’, which has a default value of submitted, in addition to received, in progress, completed and cancelled. 
+                    The other domain is for the list of staff members for the new field called ‘assigned_to’. Other administrative fields such as date resolved, comments and 
+                    FormID were created. FormID comes from the physical job cards SAWC already uses to track work and resembles a foreign key which connects to both the feature 
+                    layer and workforce assignments.
                 </p>
             </div>
         
         
-            <button type = "button" class="ExpandingButton">Step 3: Edit Workforce</button>
+            <button type = "button" class="ExpandingButton">Step 3: Web Maps</button>
             <div class="Article">
-                <p> Next, edit the Workforce project to add any relevant staff to the project and assign them roles. To add workers, go to your relevant workforce project and click the 
-                    gear wheel called “configure”. Once in this window, you can add more mobile workers or dispatchers through “users” 
-                    page on the top bar. Select the staff you would like added and a project role.  </p>
+                <p>Two web maps were configured from this feature layer, both using a campus basemap VTPK with labeling turned on. The first map represents survey points symbolized 
+                    as a single symbol. The second map symbolizes the survey requests by status, allowing the administrator to easily view the work that needs to be done.  </p>
             </div>
         
-            <button type = "button" class="ExpandingButton">Step 4: Data Collection</button>
+            <button type = "button" class="ExpandingButton">Step 4: Workforce and User Accounts </button>
             <div class="Article">
-                <p> Next, open the surveys you created and add requests into them. This will be important for assigning requests to people. 
-                    You can add requests through both the external and internal surveys to ensure they work.   </p>
+                <p>A workforce project was configured to be used as the task manager for this solution. First, AGOL accounts needed to be created for the maintenance team 
+                    categories. Using an administrative account on SAWC’s AGOL, the team created 8 accounts in total for each specialization within the maintenance staff and 
+                    one of which was for the maintenance admin. Following that, the team added the users as field workers, so tasks can be assigned to them, and the maintenance 
+                    admin as the dispatcher, the assigner of tasks. Several assignment types were created so the admin can specify what the type of task is. The campus basemap 
+                    was applied to the dispatcher and worker map so that the assignment point can be visualized within the context of the area. The dispatcher map was also 
+                    configured to show the feature layer of the survey points with the status of submitted or received. They disappeared after the status is changed to be in 
+                    progress within the hosted feature layer. </p>
             </div>
-            <button type = "button" class="ExpandingButton">Step 5: Assign Tasks</button>
+            <button type = "button" class="ExpandingButton">Step 5: Dashboard</button>
             <div class="Article">
-                <p> If you logged out of Workforce, log back into Workforce and practice assigning an open task to a staff member. 
-                    This is to test out that the task assigns properly and that this change is 
-                    reflected in the dashboards explored in step 6. To do this, Open the Workforce project by clicking it. 
-                    You can either select a request on the map by clicking on it and click “create assignment” to bring up a window to add assignment type and relevant details such as 
-                    priority, worker assigned to as well as add any more details to the request. To push it through, click “create assignment”. 
-                    New assignments can also be created by managers by clicking the “+ Assignments” button on the top bar. The same as above, fill in the details and assign it to a worker. 
-                    Now workers will be able to see tasks assigned to them.</p>
+                <p>The Dashboard was configured to provide the administrator a way to monitor ongoing tasks, view field staff productivity and see the distribution of requests 
+                    by type. The center of the dashboard shows the web map with the symbology relating to the status of the request. The legend for the Web Map is displayed on 
+                    the side panel for easy interpretation. Two sets of indicators were configured, one set displays requests submitted today, this week and this month. The 
+                    second set shows tasks completed today, this week and this month. A status summary was created by listing the count of requests by their current status. 
+                    The last addition to the dashboard was a bar chart that shows number of tasks completed by staff member. .</p>
 
             </div>
-            <button type = "button" class="ExpandingButton">Step 6: Edit Dashboards</button>
+            <button type = "button" class="ExpandingButton">Step 6: Experience Builder</button>
             <div class="Article">
-                <p> Next, edit the dashboards and requests centers to match clients name and needs. By selecting and editing each dashboard separately from your contents page, 
-                    update the titles and names of the dashboards to match the project. You can do this by clicking “edit dashboard” and once in the dashboard, you can edit every part of the 
-                    dashboard by clicking the “…” over every component and opening the 
-                    settings, called “configure”. 
-                    On the dashboard, ensure the data being presented makes sense in relation to the project goals 
-                    and select new questions to be presented in the graph area if needed.  
-                </p>
+                <p>All components of the solution come together in the experience builder. 4 pages were created: Home, Manage, Monitor and Assignments. 
+                    The home page is comprised of a background image and two text boxes that are linked to the data. The first text box displays the 
+                    number of open requests, surveys with a status of ‘submitted’. The second box is unassigned work and connects to the workforce 
+                    feature layer and indicates assignments that have been created but not assigned to a field worker. </p>
+                <p>The manage page has 3 features, a map widget that connects to the Request web map, a table that connects to the Maintenance Requests 
+                    feature layer and an editor widget. It was configured so that when an entry in the table is selected or a point on the map, the editor 
+                    panel opens, allowing the user to edit the feature. There is also a button that links to the Assignments page.</p>
+                <p>The Monitor page uses the embed widget to place the dashboard that was created in step 5. </p>
+                <p>The Assignment page uses the embed widget to display the workforce project on the page that allows the user to create an assignment. </p>
             </div>
-            <button type = "button" class="ExpandingButton">Step 7: Generate Reports using ArcGIS Online Jupyter Notebook</button>
+            <button type = "button" class="ExpandingButton">Step 7: Testing and User Manual</button>
             <div class="Article">
-                <p> Utilize ArcGIS API for Python within ArcGIS Online Jupyter Notebook environment to do the following:</p>
-                <ul>
-                    <li>Create a New Jupyter Notebook</li>
-                    <li>Access and Load Survey123 Data</li>
-                    <li>Create Reporting Templates</li>
-                    <li>Create Tasks</li>
-                    <li>Automate Reporting</li>
-                    <li>Set up task scheduling</li>
-                </ul>
-                <p>Connecting Jupyter Notebooks to ArcGIS Online Survey123 makes it easy to select data for reports. By automating the notebook with tasks,
-                reports can be generated regularly, whether daily, weekly, or monthly. This setup simplifies the process and ensures timely updates for customized reports.
-                Although we're currently unable to automate report delivery to the client, we plan to gather feedback and work towards implementing their preferred method whenever we are on-site.</p>
+                <p>The last part of the SHEQ Management Solution was to test out the system for issues and errors. This led to further improvements in 
+                    the system and helped develop the user's manual. The testing process included trying out the workflow, making mistakes and ensuring 
+                    that those mistakes didn’t break the system and were easily corrected. The process for creating the user guide was to go through the 
+                    intended workflow taking screenshots and document the steps in a comprehensive way. </p>
             </div>
         </div>
         <!--Accordion Button end-->	
