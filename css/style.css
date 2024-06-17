@@ -205,7 +205,10 @@ header {
 	.navbar a, .dropdown .dropbtn {display: none;}
 	
 	/* Selects all elements in the navbar and responsive class */
-	.navbar.responsive {position: relative;}
+	.navbar.responsive {
+		position: relative;
+		display: block;
+	}
 	
 	/* Selects links in both navbar and responsive class */
 	.navbar.responsive a {
